@@ -2,11 +2,7 @@ services:
   - type: web
     name: qr-picture
     runtime: python
-    region: singapore
     plan: free
-    # 关键：显式指定 build 命令
+    region: singapore
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python app.py"
-    envVars:
-      - key: RENDER_PYTHON_USE_POETRY
-        value: "false"
