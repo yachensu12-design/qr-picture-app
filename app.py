@@ -48,4 +48,6 @@ def home():
     return "✅ 服务运行中"
 
 if __name__ == '__main__':
-    app.run()
+    # 关键修改：从环境变量获取 PORT，并监听 0.0.0.0
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
