@@ -2,8 +2,11 @@ services:
   - type: web
     name: qr-picture
     runtime: python
-    env: python
     region: singapore
     plan: free
-    buildCommand: "echo 'No build needed'"
+    # 关键：显式指定 build 命令
+    buildCommand: "pip install -r requirements.txt"
     startCommand: "python app.py"
+    envVars:
+      - key: RENDER_PYTHON_USE_POETRY
+        value: "false"
