@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: qr-picture
+    runtime: python
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: "echo 'No build needed'"
+    startCommand: "python app.py"
